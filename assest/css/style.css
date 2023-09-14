@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.header {
+    margin-top: 30px;
+}
+.icon-back{
+    margin-left: 30px;
+    cursor: pointer;
+}
+.back-block {
+    display: none;
+}
+.qusetion-progess {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.steps
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.step {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+.anwsers {
+    display: flex;
+    flex-direction: column;
+}
+.btn {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #596e92;
+    height: 50px;
+    max-height: 100%;
+    cursor: pointer;
+    transition: background-color 0.001s ease;
+    font-size: 14px;
+    padding-left: 10px;
+    text-align: left;
+}
+.btn-hover:hover {
+    background-color: #85C1E9;
+    color: #333;
+}
+.btn:nth-child(1) {
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+}
+.btn:last-child {
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;
+}
+.selected{
+    background-color: #007e73;
+    color: #fff;
+}
+
+.d-none {
+    display: none;
+}
