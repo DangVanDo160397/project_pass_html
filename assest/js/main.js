@@ -195,37 +195,47 @@
 // }
 
 
-var look = 1;
 var buttonsElememt = document.querySelectorAll('.btn');
 
 buttonsElememt.forEach(function(button){
 
     button.onclick = function(){
 
-        buttonsElememt.forEach(function(btn){
+        var parentQuestion = button.closest('.qusetion-progess');
+        var buttonQuestion = parentQuestion.querySelectorAll('.btn');
+
+        buttonQuestion.forEach(function(btn){
             
             btn.classList.add('btn-hover');
             btn.classList.remove('selected');
-            
         });
 
         button.classList.add('selected');
         
         if(button.classList.contains('selected'))
         {
-            look++;
             button.closest('.qusetion-progess').classList.add('d-none');
             button.classList.remove('btn-hover');
-            var questionElement = document.querySelector('#question-'+look+'');
-            document.querySelector('#back-step').classList.remove('back-block');
-            questionElement.classList.remove('d-none');
+
+            var vlaueQuestion = Number(button.closest('.qusetion-progess').getAttribute('value')) + 1;
+            var questionElement = document.querySelector('#question-'+ String(vlaueQuestion));
+
+            if(questionElement != null)
+            {
+                document.querySelector('#back-step').classList.remove('back-block');
+                questionElement.classList.remove('d-none');
+            }
+            else
+            {
+                document.querySelector('.btn-submit').classList.remove('d-none');
+            }
+            
         }
     };
 });
 
 
 var qusetionProgessElement =  document.querySelectorAll('.qusetion-progess');
-
 for(var i = 1 ; i <= 2 ; i++)
 {
     var pElement = qusetionProgessElement[i];
@@ -237,24 +247,70 @@ for(var i = 1 ; i <= 2 ; i++)
     }
 }
 
-var backStep = document.querySelector('#back-step');
 
+
+var backStep = document.querySelector('#back-step');
+var qusetionsElement =  document.querySelectorAll(".qusetion-progess");
 
 backStep.addEventListener("click", function(){
-    var valueQuestion = 0;
-    var qusetionsElement =  document.querySelectorAll(".qusetion-progess");
 
+    var valueQuestion = 0;
+    
     qusetionsElement.forEach(function(question){
 
         if(!question.classList.contains('d-none'))
         {
             valueQuestion = Number(question.getAttribute('value'));
 
-            
             question.classList.add('d-none');
             
             document.querySelector('#question-'+ String(valueQuestion-1)).classList.remove('d-none');
         }
     });
     
+});
+
+
+var btnSend = document.getElementById('btn-send-id');
+
+btnSend.addEventListener('click',function(){
+
+    var totleD = 0;
+    var totleA = 0;
+    var totleS = 0;
+    qusetionsElement.forEach(function(question){
+        var dataType = question.getAttribute('data-type');
+        var valueButtonElement = Number(question.querySelector('.selected').getAttribute('value'));
+        if(dataType == 'D')
+        {
+            totleD += valueButtonElement * 2;
+        }
+        else if(dataType == 'S')
+        {
+            totleS += valueButtonElement * 2;
+        }
+        else if(dataType == 'A')
+        {
+            totleA += valueButtonElement * 2;
+        }
+
+        if(totleD >=0 && totleD <=9 && totleA >=0 && totleA <=7 && totleS >=0 && totleS <=14 )
+        {
+            alert('Kết luận : Bạn không có dấu hiệu Trầm Cảm, Lo âu và Stress. Hãy luôn giữ tâm trạng thoải mái và vui vẻ!') ; 
+        }
+        else if(totleD >=10 && totleD <=13 && totleA >=8 && totleA <=9 && totleS >=15 && totleS <=18){
+            alert(' Kết luận : Bạn  có dấu hiệu Trầm Cảm, Lo âu và Stress mức độ nhẹ. Bạn nên đến cơ sở y tế để được tư vấn, hỗ trợ.');
+        }
+        else if(totleD >=14 && totleD <=20 && totleA >=10 && totleA <=14 && totleS >=19 && totleS <=25){
+            alert('Kết luận : Bạn  có dấu hiệu Trầm Cảm, Lo âu và Stress mức độ vừa. Bạn nên đến cơ sở y tế để được tư vấn, hỗ trợ.');
+        }
+        else if(totleD >=21 && totleD <=27 && totleA >=15 && totleA <=19 && totleS >=26 && totleS <=33){
+            alert('Kết luận : Bạn có dấu hiệu Trầm Cảm, Lo âu và Stress mức độ nặng. Bạn nên đến cơ sở y tế để được tư vấn, hỗ trợ.');
+        }
+        else if(totleD >=28 &&  totleA >= 20 && totleS >= 34){
+            alert('Kết luận : Bạn có dấu hiệu Trầm Cảm, Lo âu và Stress mức độ rất nặng. Bạn nên đến cơ sở y tế để được tư vấn, hỗ trợ.');
+
+        }
+    });
+
 });

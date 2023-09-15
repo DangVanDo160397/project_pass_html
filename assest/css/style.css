@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
 }
 .container {
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     margin: 0 auto;
 }
@@ -70,4 +70,17 @@ body {
 
 .d-none {
     display: none;
+}
+.btn-submit {
+    text-align: center;
+}
+.btn-send {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 20px 50px;
+    cursor: pointer;
+    background-color: #007e73;
+    color: #fff;
+    border-radius: 20px ;
+    font-weight: 500;
 }
