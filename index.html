@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,59 +9,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./assest/fonts/fontawesome-free-6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <header class="header">
-        <div class="icon-back back-block" id="back-step">
-            <i  class="fa-solid fa-arrow-left"></i>
-        </div>
-    </header>
-    
     <div class="container">
-        <div class="qusetion-progess" id="question-1" value="1" data-type="S">
-            <div class="steps" id="step-next">
-                <p class="step" id="step-id" value="1" >1</p>
+        <div id="groupQuestion">
+            <div class="qusetion-progess" id="question-parent">
+                <div class="steps" id="step-next">
+                    <p class="step" id="step" ></p>
+                </div>
+                <div class="parent-heading">
+                    <h2 class="heading-question" id="question"></h2>
+                </div>
+                
+                <div class="anwsers">
+                    <button class="btn btn-hover point" data-value="0">Không đúng với tôi chút nào cả</button>
+                    <button  class="btn btn-hover point" data-value="1">Đúng với tôi phần nào, hoặc thỉnh thoảng mới đúng</button>
+                    <button class="btn btn-hover point" data-value="2">Đúng với tôi phần nhiều, hoặc phần lớn thời gian là đúng</button>
+                    <button class="btn btn-hover point" data-value="3">Hoàn toàn đúng với tôi, hoặc hầu hết thời gian là đúng</button>
+                </div>
             </div>
-            <h1 class="heading-question">Tôi thấy khó mà thoải mái được?</h1>
-            <div class="anwsers">
-                <button class="btn btn-hover" value="0">Không đúng với tôi chút nào cả</button>
-                <button  class="btn btn-hover" value="1">Đúng với tôi phần nào, hoặc thỉnh thoảng mới đúng</button>
-                <button class="btn btn-hover" value="2">Đúng với tôi phần nhiều, hoặc phần lớn thời gian là đúng</button>
-                <button class="btn btn-hover" value="3">Đúng với tôi phần nhiều, hoặc phần lớn thời gian là đúng</button>
-            </div>
-        </div>
-        <div class="qusetion-progess" id="question-2"  value="2" data-type="A">
-            <div class="steps">
-                <p class="step" id="step-id" value="2">2</p>
-            </div>
-            <h1 class="heading-question">Tôi bị khô miệng?</h1>
-            <div class="anwsers">
-                <button class="btn btn-hover" value="0">Không đúng với tôi chút nào cả</button>
-                <button  class="btn btn-hover" value="1">Đúng với tôi phần nào, hoặc thỉnh thoảng mới đúng</button>
-                <button class="btn btn-hover" value="2">Đúng với tôi phần nhiều, hoặc phần lớn thời gian là đúng</button>
-                <button class="btn btn-hover" value="3">Hoàn toàn đúng với tôi, hoặc hầu hết thời gian là đúng</button>
+            <div class="btn-submit d-none" id="btn-send-id">
+                <h2>Cảm ơn bạn đã dành thời gian hoàn thành Đánh giá Độ stress,lo âu, căng thẳng. </h2>
+                <p class="d-none" id="alert-content"></p>
             </div>
         </div>
-        <div class="qusetion-progess" id="question-3" value="3" data-type="D">
-            <div class="steps">
-                <p class="step" id="step-id" value="3">3</p>
-            </div>
-            <h1 class="heading-question">Tôi dường như chẳng có chút cảm xúc tích cực nào?</h1>
-            <div class="anwsers">
-                <button class="btn btn-hover" value="0">Không đúng với tôi chút nào cả</button>
-                <button  class="btn btn-hover" value="1">Đúng với tôi phần nào, hoặc thỉnh thoảng mới đúng</button>
-                <button class="btn btn-hover" value="2">Đúng với tôi phần nhiều, hoặc phần lớn thời gian là đúng</button>
-                <button class="btn btn-hover" value="3">Hoàn toàn đúng với tôi, hoặc hầu hết thời gian là đúng</button>
-            </div>
-        </div>
-        <div class="btn-submit d-none" id="btn-send-id">
-            <h2>Cảm ơn bạn đã dành thời gian hoàn thành Đánh giá Độ stress,lo âu, căng thẳng. </h2>
-            <button class="btn-send">Gửi kết quả</button>
-        </div>
+       
     </div>
 </body>
-<script src="./assest/js/main.js">
+<script src="./assest/js/main.js"></script>
 
 </script>
+
 </html>
