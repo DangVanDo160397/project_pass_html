@@ -39,9 +39,16 @@ body {
 .steps
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-content: center;
+    align-items: center;
+    cursor: pointer;
 }
+.icon-click {
+    font-size: 20px;
+
+}
+
 .parent-heading
 {
     height: 200px;
