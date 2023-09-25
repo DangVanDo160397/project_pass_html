@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assest/css/style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./assest/fonts/fontawesome-free-6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
     <title>Document</title>
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo">
+            <img src="./assest/img/logo.png">
+        </div>
+    </header>
+    <div id="process-question">
+
+    </div>
     <div class="container">
         <div id="groupQuestion">
             <div class="qusetion-progess" id="question-parent">
@@ -41,7 +50,30 @@
                 </div>
             </div>
             <div class="btn-submit d-none" id="btn-send-id">
-                <h2>Cảm ơn bạn đã dành thời gian hoàn thành Đánh giá Độ stress,lo âu, căng thẳng. </h2>
+                <h2>Cảm ơn bạn đã dành thời gian hoàn thành Đánh giá Độ stress,lo âu, trầm cảm. </h2>
+                
+                <table class="table">
+                    <thead>
+                        <th scope="col">#</td>
+                        <th scope="col">Trầm cảm</td>
+                        <th scope="col">Lo Âu</th>
+                        <th scope="col">Stress</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kết quả</td>
+                            <td id="resultD"></td>
+                            <td id="resultA"></td>
+                            <td id="resultS"></td>
+                        </tr>
+                        <tr>
+                            <td>Đánh giá</td>
+                            <td id="massageD"></td>
+                            <td id="massageA"></td>
+                            <td id="massageS"></td>
+                        </tr>
+                    </tbody>
+                </table>
                 <p id="alert-content"></p>
             </div>
         </div>
